@@ -1,0 +1,24 @@
+<div id="field" style="display: none">
+  <div class="field">
+    <button
+      *ngFor="let cell of field.cells"
+      class="cell"
+      [ngStyle]="{'top': (cell.x - 1) * 50 + 'px', 'left': (cell.y * 50 - 1) + 'px'}"
+      (click)="field.onClick(cell)"
+      [textContent]="cell.text"
+      [disabled]="cell.clicked"
+    >
+    </button>
+  </div>
+
+</div>
+
+<div id="start">
+  <button
+    id="startButton"
+    class="start"
+    (click)="startGame()"
+  >
+  Начать игру
+  </button>
+</div>
